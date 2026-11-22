@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicolás Acosta López · Ingeniero en Automatización y Robótica</title>
+<meta name="description" content="Portafolio de Nicolás Acosta López: automatización industrial, robótica, electrónica y programación.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="barra">
+  <a class="marca" href="#inicio">Nicolás Acosta</a>
+  <nav aria-label="Principal">
+    <a href="#proyectos">Proyectos</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#formacion">Formación</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="hero-texto">
+      <h1>Nicolás Alejandro Acosta López</h1>
+      <p class="bajada">Ingeniero en Automatización y Robótica. Diseño sistemas de control, electrónica y software para la industria, y hoy profundizo en programación backend.</p>
+      <p class="acciones">
+        <a class="boton" href="#proyectos">Ver proyectos</a>
+        <a class="boton secundario" href="CV_Nicolas_Acosta.pdf" download>Descargar CV</a>
+      </p>
+    </div>
+    <figure class="grafico">
+      <svg id="pid" viewBox="0 0 480 300" role="img" aria-labelledby="pid-t">
+        <title id="pid-t">Respuesta de un controlador PID a un escalón: la señal sube, sobrepasa la consigna y se estabiliza.</title>
+        <path class="ejes" d="M40 20V250H460" />
+        <line class="consigna" x1="40" y1="90" x2="460" y2="90" />
+        <path class="curva" pathLength="1" d="M40 250C90 250 100 56 160 58S220 116 262 104S330 88 380 90L460 90" />
+        <text x="46" y="80" class="rotulo">consigna</text>
+        <text x="460" y="272" class="rotulo" text-anchor="end">tiempo</text>
+        <text x="30" y="24" class="rotulo" text-anchor="end">nivel</text>
+      </svg>
+      <figcaption>Respuesta de un lazo PID a un escalón, como el que regulaba el nivel de agua en mi proyecto de Inacap.
+        <button type="button" id="repetir" class="enlace">Repetir</button></figcaption>
+    </figure>
+  </section>
+
+  <section id="proyectos" aria-labelledby="t-proy">
+    <h2 id="t-proy">Proyectos</h2>
+
+    <article class="proyecto">
+      <img src="img/cuadrupedo.jpg" alt="Robot cuadrúpedo azul con cuerpo negro" width="800" height="599" loading="lazy">
+      <div>
+        <h3>Locomoción de un robot cuadrúpedo con aprendizaje por refuerzo</h3>
+        <p>Como ayudante de investigación en la UTFSM, evalué en simulación el movimiento de un robot cuadrúpedo entrenado con aprendizaje por refuerzo profundo y entregué retroalimentación para mejorar cada generación del algoritmo. Los ajustes optimizados se cargaron en el robot real.</p>
+        <p class="tecnologias">Linux, simulación, aprendizaje por refuerzo</p>
+        <details class="detalle">
+          <summary>Ver detalle</summary>
+          <p>Mi responsabilidad incluía analizar en detalle el movimiento del robot y dar retroalimentación técnica para mejorar su desempeño en generaciones futuras.</p><p>Usé herramientas de Linux y entornos de simulación especializados para ejecutar pruebas, ajustar parámetros y cargar las configuraciones optimizadas en el robot real. El trabajo reforzó mis conocimientos en aprendizaje por refuerzo, robótica autónoma y procesamiento de datos en tiempo real.</p>
+        </details>
+        <p class="enlaces"><a href="https://repositorio.usm.cl/bitstream/handle/11673/43467/3560900257462UTFSM.pdf?sequence=1&amp;isAllowed=y">Documento del proyecto</a> <a href="https://www.flanlate.com/2023/02/investigadores-disenaron-robot-arana.html">Noticia</a></p>
+      </div>
+    </article>
+
+    <article class="proyecto">
+      <img src="img/plc.jpg" alt="PLC Siemens S7-1200 conectado en un tablero" width="366" height="340" loading="lazy">
+      <div>
+        <h3>Control de nivel de agua con PLC y PID</h3>
+        <p>Sistema de regulación de nivel en una columna, con una bomba controlada por variador de frecuencia. Dos PLC Siemens S7-1200 en red ejecutan un controlador PID programado en TIA Portal, con dos pantallas HMI que operan en simultáneo y un tablero con pulsadores y luces piloto.</p>
+        <p class="tecnologias">Siemens S7-1200, TIA Portal, PID, HMI, variador de frecuencia</p>
+        <details class="detalle">
+          <summary>Ver detalle</summary>
+          <p>Cada PLC se encargó de aspectos distintos del proceso, lo que mejoró la respuesta y la coordinación del control. Las dos pantallas HMI permiten monitorear en tiempo real y modificar los parámetros del sistema. El tablero con pulsadores y luces piloto da control manual e indica el estado de forma visual.</p><p>El proyecto integra controladores, interfaces gráficas y comunicación en redes industriales.</p>
+          <div class="galeria"><img src="img/plc-hmi.jpg" alt="Pantalla HMI con el estado del sistema" loading="lazy"><img src="img/plc-tablero.jpg" alt="Tablero con pulsadores y luces piloto" loading="lazy"></div>
+        </details>
+      </div>
+    </article>
+
+    <article class="proyecto">
+      <img src="img/laser.jpg" alt="Circuito del transceptor láser armado en protoboard" width="495" height="252" loading="lazy">
+      <div>
+        <h3>Transceptor láser de audio</h3>
+        <p>Sistema de comunicación óptica que transmite sonido mediante un haz láser. El emisor modula un puntero láser con la señal de audio; el receptor la capta con un fotodiodo, la amplifica y la devuelve a parlantes.</p>
+        <p class="tecnologias">Transistores amplificadores, fotodiodo, procesamiento de señales</p>
+        <details class="detalle">
+          <summary>Ver detalle</summary>
+          <p><strong>Emisor:</strong> convierte el audio en una señal óptica. Un puntero láser se modula con la entrada de audio, procesada por transistores amplificadores.</p><p><strong>Receptor:</strong> un fotodiodo sensible capta la señal óptica y la convierte en eléctrica. Luego se amplifica y se procesa para restaurar el audio original.</p><p>Apliqué procesamiento de señales, amplificación electrónica y telecomunicaciones ópticas para lograr una transmisión sin cables.</p>
+          <div class="galeria"><img src="img/laser-esquema.jpg" alt="Esquema del circuito emisor" loading="lazy"></div>
+        </details>
+      </div>
+    </article>
+
+    <article class="proyecto">
+      <img src="img/alta-frecuencia.jpg" alt="Simulación del campo eléctrico en una guía de onda" width="900" height="616" loading="lazy">
+      <div>
+        <h3>Informe de simulación de dispositivos de alta frecuencia</h3>
+        <p>Informe académico con el análisis de una guía de onda rectangular, un cable coaxial y una línea microstrip: frecuencia de corte, impedancia, pérdidas, parámetros S11/S21 y VSWR, con distribución de campos eléctricos y magnéticos.</p>
+        <p class="tecnologias">MATLAB, Ansys HFSS</p>
+        <details class="detalle">
+          <summary>Ver detalle</summary>
+          <p>Fue un trabajo académico de hace tiempo y no es mi área de especialidad, pero lo dejo porque muestra cómo abordo el análisis y la simulación de un problema técnico.</p><p><strong>Guía de onda rectangular:</strong> modo fundamental TE10 y otros modos, frecuencia de corte, ancho de banda y campos eléctricos y magnéticos.</p><p><strong>Cable coaxial:</strong> relación entre radios y dieléctrico, impedancia de entrada, pérdidas y distribución de campos.</p><p><strong>Línea microstrip:</strong> cálculo del ancho del conductor, parámetros S11/S21, VSWR y velocidad de fase.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="proyecto">
+      <img src="img/abb.jpg" alt="Brazo robótico ABB moviendo una torre de cubos en simulación" width="683" height="676" loading="lazy">
+      <div>
+        <h3>Brazo robótico ABB IRB 1200</h3>
+        <p>Programé en RobotStudio la secuencia para trasladar una torre de cubos conservando su orden. La validé en simulación, la convertí a código RAPID y la ejecuté en el robot real.</p>
+        <p class="tecnologias">RobotStudio, RAPID</p>
+        <details class="detalle">
+          <summary>Ver detalle</summary>
+          <p><strong>Simulación:</strong> diseñé y optimicé la secuencia de movimientos en un entorno virtual, configurando las entradas y salidas del controlador y agregando herramientas para manipular objetos.</p><p><strong>Código RAPID:</strong> una vez validada la simulación, la convertí a RAPID y la transferí al robot físico.</p><p><strong>Tarea:</strong> trasladar una torre de cubos uno por uno y reubicarlos en el mismo orden inicial, para demostrar precisión y repetibilidad.</p>
+          <div class="galeria"><img src="img/abb-2.jpg" alt="Otra vista de la simulación del brazo ABB" loading="lazy"></div>
+        </details>
+      </div>
+    </article>
+
+    <!-- PLANTILLA para un proyecto nuevo: copia este bloque dentro de la sección de proyectos y edítalo
+    <article class="proyecto">
+      <img src="img/nombre.jpg" alt="Descripción de la imagen" width="800" height="600" loading="lazy">
+      <div>
+        <h3>Título del proyecto</h3>
+        <p>Resumen de 2 o 3 líneas: qué hiciste y qué lograste.</p>
+        <p class="tecnologias">Tecnologías, separadas por comas</p>
+        <p class="enlaces"><a href="https://github.com/tu-usuario/repositorio">Código en GitHub</a></p>
+        <details class="detalle">
+          <summary>Ver detalle</summary>
+          <p>Explicación más larga: problema, solución, resultados y aprendizajes.</p>
+        </details>
+      </div>
+    </article>
+    -->
+  </section>
+
+  <section id="experiencia" aria-labelledby="t-exp">
+    <h2 id="t-exp">Experiencia</h2>
+    <ol class="linea">
+      <li><span class="fecha">Dic 2022 – hoy</span>
+        <div><h3>Seguridad, Hospital Clínico FUSAT (ISS Chile)</h3>
+        <p>Propongo mejoras en control de accesos, reportes y procedimientos, alineadas con la normativa OS-10. Coordino al equipo ante incidentes junto a Carabineros y al personal del hospital.</p></div></li>
+      <li><span class="fecha">Dic 2019 – Oct 2020</span>
+        <div><h3>Asesor técnico, Seguridad La Unión</h3>
+        <p>Participé en la formalización de la empresa: documentos técnicos y administrativos, protocolos de seguridad y gestión de riesgos. Asesoré el uso de drones, radios y cámaras de vigilancia.</p></div></li>
+      <li><span class="fecha">Ene – Mar 2017</span>
+        <div><h3>Práctica industrial, Sociedad Técnica en Metales</h3>
+        <p>Mantenimiento de maquinaria y hornos de fundición, equipos trifásicos y variadores de frecuencia. Participé en la fabricación de ruedas de tren, desde el molde hasta el torneado final.</p></div></li>
+      <li><span class="fecha">Oct 2014 – Ene 2015</span>
+        <div><h3>Ayudante de investigación, UTFSM</h3>
+        <p>Robot cuadrúpedo con aprendizaje por refuerzo profundo (ver proyectos).</p></div></li>
+    </ol>
+  </section>
+
+  <section id="formacion" aria-labelledby="t-for">
+    <h2 id="t-for">Formación</h2>
+    <ol class="linea">
+      <li><span class="fecha">2022 – 2025</span>
+        <div><h3>Ingeniería en Automatización y Robótica, Inacap</h3>
+        <p>Titulado. Supervisión remota con SCADA, IoT y redes industriales; PLC, HMI, brazos robóticos, motores trifásicos, hidráulica y neumática; un vehículo autónomo programado en Python.</p></div></li>
+      <li><span class="fecha">2013 – 2017</span>
+        <div><h3>Ingeniería Civil Electrónica (estudios parciales), UTFSM</h3>
+        <p>Circuitos, procesamiento de señales y electrónica de potencia; microcontroladores y FPGA en Verilog; matemáticas aplicadas.</p></div></li>
+      <li><span class="fecha">2011</span>
+        <div><h3>Inglés avanzado (C1), Tronwell</h3></div></li>
+    </ol>
+  </section>
+
+  <section id="habilidades" aria-labelledby="t-hab">
+    <h2 id="t-hab">Habilidades</h2>
+    <dl class="habilidades">
+      <div><dt>Programación</dt><dd>Python, C/C++, Java, Verilog, MATLAB/Simulink, RobotStudio</dd></div>
+      <div><dt>Control y automatización</dt><dd>PLC Siemens, TIA Portal, SCADA, HMI, Arduino, ESP32, Raspberry Pi</dd></div>
+      <div><dt>Web y servidores</dt><dd>AWS, WordPress, dominios, DNS, certificados SSL</dd></div>
+      <div><dt>Inteligencia artificial</dt><dd>TensorFlow, aprendizaje supervisado y no supervisado</dd></div>
+      <div><dt>Diseño y fabricación</dt><dd>SolidWorks, AutoCAD, Fusion 360, impresión 3D</dd></div>
+    </dl>
+  </section>
+
+  <section id="contacto" aria-labelledby="t-con">
+    <h2 id="t-con">Contacto</h2>
+    <p>Busco un cargo de ingeniería en automatización, robótica o desarrollo de software.</p>
+    <p class="enlaces">
+      <a href="mailto:acostalopeznicolas@gmail.com">acostalopeznicolas@gmail.com</a>
+      <a href="https://wa.me/56998409812">WhatsApp +56 9 9840 9812</a>
+    </p>
+  </section>
+</main>
+
+<footer><p>© <span id="anio">2026</span> Nicolás Acosta López</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
